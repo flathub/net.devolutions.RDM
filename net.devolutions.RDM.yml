@@ -20,10 +20,10 @@ modules:
     buildsystem: simple
     build-commands:
       - ar x RemoteDesktopManager.deb
-      - tar --use-compress-program=unzstd -xf data.tar.zst
+      - tar -xf data.tar.xz
       - install -Dm644 usr/share/applications/remotedesktopmanager.desktop ${FLATPAK_DEST}/share/applications/net.devolutions.RDM.desktop
       - mv usr/lib/* /app/
-      - rm -r control.tar.zst data.tar.zst debian-binary
+      - rm -r control.tar.xz data.tar.xz debian-binary
       - install -D remotedesktopmanager /app/bin/remotedesktopmanager
       - install -Dm644 net.devolutions.RDM.metainfo.xml /app/share/metainfo/net.devolutions.RDM.metainfo.xml
       - install -Dm644 net.devolutions.RDM.svg ${FLATPAK_DEST}/share/icons/hicolor/scalable/apps/net.devolutions.RDM.svg
@@ -32,9 +32,9 @@ modules:
       - desktop-file-edit --remove-key='Path' /app/share/applications/net.devolutions.RDM.desktop
     sources:
       - type: file
-        url: https://cdn.devolutions.net/download/Linux/RDM/2023.1.0.3/RemoteDesktopManager_2023.1.0.3_amd64.deb
+        url: https://cdn.devolutions.net/download/Linux/RDM/2023.1.0.4/RemoteDesktopManager_2023.1.0.4_amd64.deb
         dest-filename: RemoteDesktopManager.deb
-        sha256: 166632aca2e14b21784b5747ac0bff05ddc3d1aab8b14eb4d4c97d228454db0e
+        sha256: a3b7a375560439363a3c9e3ef461c557d4c6b1dfcca1a8fb34264bb8f6070540
         only-arches:
           - x86_64
       - type: file
