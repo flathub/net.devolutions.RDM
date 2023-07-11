@@ -1,6 +1,6 @@
 app-id: net.devolutions.RDM
 runtime: org.gnome.Platform
-runtime-version: '42'
+runtime-version: '44'
 sdk: org.gnome.Sdk
 command: remotedesktopmanager
 tags: [proprietary]
