@@ -1,6 +1,6 @@
 app-id: net.devolutions.RDM
 runtime: org.gnome.Platform
-runtime-version: '44'
+runtime-version: '42'
 sdk: org.gnome.Sdk
 command: remotedesktopmanager
 tags: [proprietary]
@@ -32,9 +32,9 @@ modules:
       - desktop-file-edit --remove-key='Path' /app/share/applications/net.devolutions.RDM.desktop
     sources:
       - type: file
-        url: https://cdn.devolutions.net/download/Linux/RDM/2023.2.1.5/RemoteDesktopManager_2023.2.1.5_amd64.deb
+        url: https://cdn.devolutions.net/download/Linux/RDM/2023.2.1.6/RemoteDesktopManager_2023.2.1.6_amd64.deb
         dest-filename: RemoteDesktopManager.deb
-        sha256: 17ed67fe5d01c560dca987b7072f7a8f904207e3e10f11e4c2f354e029a7c3b9
+        sha256: 9a0fb146a6c3c3a04415b083c4e3601a3d846931eb9eaace081bea27d99499c7
         only-arches:
           - x86_64
       - type: file
