@@ -34,7 +34,7 @@ modules:
       - type: file
         url: https://cdn.devolutions.net/download/Linux/RDM/2023.3.1.7/RemoteDesktopManager_2023.3.1.7_amd64.deb
         dest-filename: RemoteDesktopManager.deb
-        sha256: 0dee6f0eec308a1647b227290895931a0db23dfb2bc086b2774685f1e96f7e79
+        sha256: 576c396d1763891ceec98a61f06f372a123c269a374326ebbbf3eeb6a3715e01
         only-arches:
           - x86_64
       - type: file
