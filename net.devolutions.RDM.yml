@@ -1,6 +1,6 @@
 app-id: net.devolutions.RDM
 runtime: org.gnome.Platform
-runtime-version: '42'
+runtime-version: '45'
 sdk: org.gnome.Sdk
 command: remotedesktopmanager
 tags: [proprietary]
@@ -23,6 +23,7 @@ modules:
       - tar -xf data.tar.xz
       - install -Dm644 usr/share/applications/remotedesktopmanager.desktop ${FLATPAK_DEST}/share/applications/net.devolutions.RDM.desktop
       - mv usr/lib/* /app/
+      - rm /app/devolutions/RemoteDesktopManager/libWebView-4.0.so
       - rm -r control.tar.xz data.tar.xz debian-binary
       - install -D remotedesktopmanager /app/bin/remotedesktopmanager
       - install -Dm644 net.devolutions.RDM.metainfo.xml /app/share/metainfo/net.devolutions.RDM.metainfo.xml
@@ -32,9 +33,9 @@ modules:
       - desktop-file-edit --remove-key='Path' /app/share/applications/net.devolutions.RDM.desktop
     sources:
       - type: file
-        url: https://cdn.devolutions.net/download/Linux/RDM/2023.3.1.7/RemoteDesktopManager_2023.3.1.7_amd64.deb
+        url: https://cdn.devolutions.net/download/Linux/RDM/2023.3.1.9/RemoteDesktopManager_2023.3.1.9_amd64.deb
         dest-filename: RemoteDesktopManager.deb
-        sha256: 576c396d1763891ceec98a61f06f372a123c269a374326ebbbf3eeb6a3715e01
+        sha256: 6a3d286ca9a375169d1de33f305ea56dde0873e82e0c8b98ec194733c324791a
         only-arches:
           - x86_64
       - type: file
