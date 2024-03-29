@@ -1,3 +1,2 @@
 #!/bin/bash
-cd /app/devolutions/RemoteDesktopManager/
-exec ./RemoteDesktopManager
+exec /app/devolutions/RemoteDesktopManager/RemoteDesktopManager $@
