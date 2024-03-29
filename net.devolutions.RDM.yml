@@ -32,7 +32,9 @@ modules:
       - install -Dm644 net.devolutions.RDM.metainfo.xml ${FLATPAK_DEST}/share/metainfo/net.devolutions.RDM.metainfo.xml
       - desktop-file-edit --set-key='Icon' --set-value="$FLATPAK_ID" usr/share/applications/com.devolutions.remotedesktopmanager.desktop
       - sed -i "s/com.devolutions.remotedesktopmanager/$FLATPAK_ID/g" usr/share/mime/packages/*
-      - for f in $(find usr/share/ -type f -not -path usr/share/metainfo/*); do install -Dm644 "$f" `f=${f[@]##usr/} && echo "${FLATPAK_DEST}/${f/com.devolutions.remotedesktopmanager/$FLATPAK_ID}"`; done
+      - for f in $(find usr/share/ -type f -not -path usr/share/metainfo/*); do install
+        -Dm644 "$f" `f=${f[@]##usr/} && echo "${FLATPAK_DEST}/${f/com.devolutions.remotedesktopmanager/$FLATPAK_ID}"`;
+        done
     cleanup:
       - control.tar.xz
       - data.tar.xz
@@ -63,7 +65,7 @@ modules:
     sources:
       - type: git
         url: https://gitlab.gnome.org/GNOME/vte.git
-        tag: 0.72.4
+        tag: 0.76.0
         x-checker-data:
           type: git
           tag-pattern: ^([\d.]+)$
@@ -80,6 +82,7 @@ modules:
 #        sha256: c4c178fbb05f72acc484d22ddb0568f7532c409b0a13e06513ff54b91e947783
 #      - type: shell
 #        conmmands: [autoreconf -vfi]
+        commit: 3c29bfef30c34afec4982ba5ec37f944cfacbba2
   - name: xdotool
     no-autogen: true
     make-args:
