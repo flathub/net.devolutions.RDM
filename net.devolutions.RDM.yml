@@ -18,7 +18,6 @@ finish-args:
   - --filesystem=~/.rdm:create
   - --filesystem=xdg-run/keyring
   - --env=SSL_CERT_FILE=/etc/ssl/certs/ca-certificates.crt
-
 modules:
   - name: rdm
     buildsystem: simple
@@ -42,13 +41,13 @@ modules:
       - type: file
         url: https://cdn.devolutions.net/download/Linux/RDM/2024.1.0.8/RemoteDesktopManager_2024.1.0.8_amd64.deb
         dest-filename: RemoteDesktopManager.deb
-        sha256: c8c41d78cb7b795ac8abd61671b31c819c700fb3b958b73bfbe584b39f366264
+        sha256: C8C41D78CB7B795AC8ABD61671B31C819C700FB3B958B73BFBE584B39F366264
         only-arches:
           - x86_64
       - type: file
         url: https://cdn.devolutions.net/download/Linux/RDM/2024.1.0.8/RemoteDesktopManager_2024.1.0.8_arm64.deb
         dest-filename: RemoteDesktopManager.deb
-        sha256: 5f2488215b2c5c389cb40f8ab08127b90254a7d529030c3e79712113ea8cf312
+        sha256: 5F2488215B2C5C389CB40F8AB08127B90254A7D529030C3E79712113EA8CF312
         only-arches:
           - aarch64
       - type: file
@@ -67,20 +66,31 @@ modules:
         x-checker-data:
           type: git
           tag-pattern: ^([\d.]+)$
-#  - name: gnome-keyring # enabling filesystem=xdg-run/keyring should suffice
-#    config-opts:
-#      - --disable-static
-#      - --disable-gtk-doc
-#      - --disable-coverage
-#      - --disable-introspection
-#    rm-configure: true
-#    sources:
-#      - type: archive
-#        url: https://download.gnome.org/sources/libgnome-keyring/3.12/libgnome-keyring-3.12.0.tar.xz
-#        sha256: c4c178fbb05f72acc484d22ddb0568f7532c409b0a13e06513ff54b91e947783
-#      - type: shell
-#        conmmands: [autoreconf -vfi]
   - name: xdotool
+    #  - name: gnome-keyring # enabling filesystem=xdg-run/keyring should suffice
+    #    config-opts:
+
+    #      - --disable-static
+
+    #      - --disable-gtk-doc
+
+    #      - --disable-coverage
+
+    #      - --disable-introspection
+
+    #    rm-configure: true
+
+    #    sources:
+
+    #      - type: archive
+
+    #        url: https://download.gnome.org/sources/libgnome-keyring/3.12/libgnome-keyring-3.12.0.tar.xz
+
+    #        sha256: c4c178fbb05f72acc484d22ddb0568f7532c409b0a13e06513ff54b91e947783
+
+    #      - type: shell
+
+    #        conmmands: [autoreconf -vfi]
     no-autogen: true
     make-args:
       - WITHOUT_RPATH_FIX=1
