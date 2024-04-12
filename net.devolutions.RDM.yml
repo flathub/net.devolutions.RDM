@@ -18,7 +18,6 @@ finish-args:
   - --filesystem=~/.rdm:create
   - --filesystem=xdg-run/keyring
   - --env=SSL_CERT_FILE=/etc/ssl/certs/ca-certificates.crt
-
 modules:
   - name: rdm
     buildsystem: simple
@@ -67,20 +66,31 @@ modules:
         x-checker-data:
           type: git
           tag-pattern: ^([\d.]+)$
-#  - name: gnome-keyring # enabling filesystem=xdg-run/keyring should suffice
-#    config-opts:
-#      - --disable-static
-#      - --disable-gtk-doc
-#      - --disable-coverage
-#      - --disable-introspection
-#    rm-configure: true
-#    sources:
-#      - type: archive
-#        url: https://download.gnome.org/sources/libgnome-keyring/3.12/libgnome-keyring-3.12.0.tar.xz
-#        sha256: c4c178fbb05f72acc484d22ddb0568f7532c409b0a13e06513ff54b91e947783
-#      - type: shell
-#        conmmands: [autoreconf -vfi]
   - name: xdotool
+    #  - name: gnome-keyring # enabling filesystem=xdg-run/keyring should suffice
+    #    config-opts:
+
+    #      - --disable-static
+
+    #      - --disable-gtk-doc
+
+    #      - --disable-coverage
+
+    #      - --disable-introspection
+
+    #    rm-configure: true
+
+    #    sources:
+
+    #      - type: archive
+
+    #        url: https://download.gnome.org/sources/libgnome-keyring/3.12/libgnome-keyring-3.12.0.tar.xz
+
+    #        sha256: c4c178fbb05f72acc484d22ddb0568f7532c409b0a13e06513ff54b91e947783
+
+    #      - type: shell
+
+    #        conmmands: [autoreconf -vfi]
     no-autogen: true
     make-args:
       - WITHOUT_RPATH_FIX=1
