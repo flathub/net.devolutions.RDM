@@ -68,6 +68,7 @@ modules:
           tag-pattern: ^([\d.]+)$
   - name: xdotool
     #  - name: gnome-keyring # enabling filesystem=xdg-run/keyring should suffice
+
     #    config-opts:
 
     #      - --disable-static
