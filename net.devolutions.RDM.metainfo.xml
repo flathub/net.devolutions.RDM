@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="UTF-8"?>
+﻿<?xml version="1.0" encoding="UTF-8"?>
 <component type="desktop">
   <id>net.devolutions.RDM</id>
   <replaces>
@@ -22,7 +22,7 @@
     </screenshot>
   </screenshots>
   <releases>
-    <release version="2024.1.0.8" date="2024-03-28" />
+    <release version="2024.1.0.8" date="2024-04-18" />
   </releases>
   <content_rating type="oars-1.1" />
   <developer_name>Devolutions inc.</developer_name>
