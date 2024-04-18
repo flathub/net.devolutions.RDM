@@ -39,15 +39,15 @@ modules:
       - usr
     sources:
       - type: file
-        url: https://cdn.devolutions.net/download/Linux/RDM/2024.1.0.8/RemoteDesktopManager_2024.1.0.8_amd64.deb
+        url: https://cdn.devolutions.net/download/Linux/RDM/2023.3.1.4/RemoteDesktopManager_2023.3.1.4_amd64.deb
         dest-filename: RemoteDesktopManager.deb
-        sha256: c8c41d78cb7b795ac8abd61671b31c819c700fb3b958b73bfbe584b39f366264
+        sha256: 5d33c364fd358fc3cd9af32aca795189a5ce734417f99496b5e85059cfd7ef44
         only-arches:
           - x86_64
       - type: file
-        url: https://cdn.devolutions.net/download/Linux/RDM/2024.1.0.8/RemoteDesktopManager_2024.1.0.8_arm64.deb
+        url: https://cdn.devolutions.net/download/Linux/RDM/2023.3.1.4/RemoteDesktopManager_2023.3.1.4_arm64.deb
         dest-filename: RemoteDesktopManager.deb
-        sha256: 5f2488215b2c5c389cb40f8ab08127b90254a7d529030c3e79712113ea8cf312
+        sha256: ec3eea1d7750f0796307f18cb8bf03d37c386704d452aa2c9e7c3a5871f64e30
         only-arches:
           - aarch64
       - type: file
@@ -68,6 +68,7 @@ modules:
           tag-pattern: ^([\d.]+)$
   - name: xdotool
     #  - name: gnome-keyring # enabling filesystem=xdg-run/keyring should suffice
+
     #    config-opts:
 
     #      - --disable-static
