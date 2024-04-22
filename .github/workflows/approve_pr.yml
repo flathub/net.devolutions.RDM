@@ -1,0 +1,42 @@
+name: Approve PR
+
+on:
+  workflow_dispatch:
+    inputs:
+      pr_number:
+        description: 'PR number'
+        required: true
+
+jobs:
+  approve_pr:
+    environment: pull-request
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Get PR info
+        id: pr_info
+        run: |
+          PR_AUTHOR=$(gh pr view ${{ inputs.pr_number }} --repo flathub/net.devolutions.RDM --json author -q '.author.login')
+          echo "author=$PR_AUTHOR" >> $GITHUB_OUTPUT
+        env:
+          GH_TOKEN: ${{ secrets.DEVOLUTIONSBOT_WRITE_TOKEN }}
+
+      - name: Validate Actor
+        run: |
+          if [ "${{ steps.pr_info.outputs.author }}" == "${{ github.actor }}" ]; then
+            echo "::error:: You can't approve your own PR"
+            exit 1
+          fi
+
+      - name: Merge pull request
+        run: |
+          echo "Waiting for checks to start..."
+          sleep 120
+          echo "Checking if checks have started..."
+          gh pr checks ${{ inputs.pr_number }} --repo flathub/net.devolutions.RDM --watch --fail-fast
+          gh pr merge ${{ inputs.pr_number }} --repo flathub/net.devolutions.RDM --squash --delete-branch
+        env:
+          GH_TOKEN: ${{ secrets.DEVOLUTIONSBOT_WRITE_TOKEN }}
