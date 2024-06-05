@@ -1,4 +1,4 @@
-﻿<?xml version="1.0" encoding="UTF-8"?>
+<?xml version="1.0" encoding="UTF-8"?>
 <component type="desktop">
   <id>net.devolutions.RDM</id>
   <replaces>
@@ -22,6 +22,11 @@
     </screenshot>
   </screenshots>
   <releases>
+    <release version="2024.1.2.3-2" date="2024-06-04" urgency="high">
+ 	  <description>
+		<p>Resolved the startup crash caused by SVG loader issue.</p>
+      </description>
+    </release>
     <release version="2024.1.2.3" date="2024-05-29">
       <url>https://devolutions.net/remote-desktop-manager/release-notes/linux/</url>
     </release>
