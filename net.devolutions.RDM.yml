@@ -2,6 +2,7 @@ app-id: net.devolutions.RDM
 runtime: org.gnome.Platform
 runtime-version: '45'
 sdk: org.gnome.Sdk
+sdk-extensions: [org.freedesktop.Sdk.Extension.rust-stable]
 command: remotedesktopmanager
 tags: [proprietary]
 finish-args:
@@ -58,9 +59,10 @@ modules:
   - name: gdk-pixbuf
     buildsystem: meson
     config-opts:
-      - -Dothers=enabled
+      - -Dothers=enabled # needed for svg
       - -Dman=false
-      - -Dbuiltin_loaders=all
+      - -Dgtk_doc=false
+      - -Dbuiltin_loaders=icns,png,bmp,ico
     sources:
       - type: git
         url: https://gitlab.gnome.org/GNOME/gdk-pixbuf.git
@@ -68,6 +70,14 @@ modules:
         x-checker-data:
           type: git
           tag-pattern: ^([\d.]+)$
+  - name: librsvg
+    buildsystem: autotools
+    sources:
+      - librsvg.json
+    build-options:
+      append-path: /usr/lib/sdk/rust-stable/bin
+      env:
+        CARGO_HOME: /run/build/librsvg/cargo
   - name: vte
     buildsystem: meson
     config-opts:
