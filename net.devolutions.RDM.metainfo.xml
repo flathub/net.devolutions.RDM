@@ -22,7 +22,7 @@
     </screenshot>
   </screenshots>
   <releases>
-    <release version="2024.1.2.3-3" date="2024-06-04" urgency="high">
+    <release version="2024.1.2.3-3" date="2024-06-07" urgency="high">
       <description>
         <p>Resolved the startup crash caused by SVG loader issue.</p>
       </description>
