@@ -22,17 +22,7 @@
     </screenshot>
   </screenshots>
   <releases>
-    <release version="2024.1.2.3-3" date="2024-06-07" urgency="high">
-      <description>
-        <p>Resolved the startup crash caused by SVG loader issue.</p>
-      </description>
-    </release>
-    <release version="2024.1.2.3-2" date="2024-06-04">
- 	  <description>
-		<p>Resolved the startup crash caused by SVG loader issue.</p>
-      </description>
-    </release>
-    <release version="2024.1.2.3" date="2024-05-29">
+    <release version="2024.2.0.8" date="2024-06-18">
       <url>https://devolutions.net/remote-desktop-manager/release-notes/linux/</url>
     </release>
   </releases>
