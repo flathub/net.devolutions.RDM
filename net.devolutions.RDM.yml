@@ -40,15 +40,15 @@ modules:
       - usr
     sources:
       - type: file
-        url: https://cdn.devolutions.net/download/Linux/RDM/2024.2.0.10/RemoteDesktopManager_2024.2.0.10_amd64.deb
+        url: https://cdn.devolutions.net/download/Linux/RDM/2024.2.1.1/RemoteDesktopManager_2024.2.1.1_amd64.deb
         dest-filename: RemoteDesktopManager.deb
-        sha256: f45a95335d36e812323b57d3a1318340f02728f3dc77fe0dbc727b7e6f040097
+        sha256: 671e573e0a5e6c86a5932b5060176c96348531d8bc3158f3e9d6d7405f2da4f4
         only-arches:
           - x86_64
       - type: file
-        url: https://cdn.devolutions.net/download/Linux/RDM/2024.2.0.10/RemoteDesktopManager_2024.2.0.10_arm64.deb
+        url: https://cdn.devolutions.net/download/Linux/RDM/2024.2.1.1/RemoteDesktopManager_2024.2.1.1_arm64.deb
         dest-filename: RemoteDesktopManager.deb
-        sha256: 1bc4f0b670f9dd9dc44b61c753bc196005ddf194428e3a2f2174fcc126cf2c33
+        sha256: 767a0b6d99231da4848be6463ec67170508bdef5bf276323245261cf259a5702
         only-arches:
           - aarch64
       - type: file
