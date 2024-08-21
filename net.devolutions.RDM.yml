@@ -8,7 +8,6 @@ tags: [proprietary]
 finish-args:
   - --share=ipc
   - --device=dri
-  - --socket=x11
   - --socket=fallback-x11
   - --socket=wayland
   - --socket=pulseaudio
@@ -40,15 +39,15 @@ modules:
       - usr
     sources:
       - type: file
-        url: https://cdn.devolutions.net/download/Linux/RDM/2024.2.0.8/RemoteDesktopManager_2024.2.0.8_amd64.deb
+        url: https://cdn.devolutions.net/download/Linux/RDM/2024.2.2.3/RemoteDesktopManager_2024.2.2.3_amd64.deb
         dest-filename: RemoteDesktopManager.deb
-        sha256: 5b9bbd8c9c67ab6c88ee5c15b82a70ef2036f7475df31dcc75405b4d9feca3ef
+        sha256: d3330e886f9a1506cfba9188de5afa23243ab46d902f83ec0f7f095e824013d5
         only-arches:
           - x86_64
       - type: file
-        url: https://cdn.devolutions.net/download/Linux/RDM/2024.2.0.8/RemoteDesktopManager_2024.2.0.8_arm64.deb
+        url: https://cdn.devolutions.net/download/Linux/RDM/2024.2.2.3/RemoteDesktopManager_2024.2.2.3_arm64.deb
         dest-filename: RemoteDesktopManager.deb
-        sha256: af190d44cad63fe477aff913213dea5833eccb4c81a471b0049bb918dbba39e8
+        sha256: 8dffdadf3e9cec0b91b746873132d34c7360536e14d40d85e801a12ba8a50ca1
         only-arches:
           - aarch64
       - type: file
