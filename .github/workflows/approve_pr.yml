@@ -16,17 +16,23 @@ jobs:
       - name: Checkout
         uses: actions/checkout@v4
 
-      - name: Get PR info
-        id: pr_info
+      - name: Get actors info
+        id: actor_info
         run: |
           PR_AUTHOR=$(gh pr view ${{ inputs.pr_number }} --repo flathub/net.devolutions.RDM --json author -q '.author.login')
+
+          APPROVER=$(curl -s -H "Authorization: Bearer ${{ secrets.GITHUB_TOKEN }}" \
+            "https://api.github.com/repos/${{ github.repository }}/actions/runs/${{ github.run_id }}/approvals")
+          APPROVER_LOGIN=$(echo $APPROVER | jq -r '.[0].user.login')
+
+          echo "approver=$APPROVER_LOGIN" >> $GITHUB_OUTPUT
           echo "author=$PR_AUTHOR" >> $GITHUB_OUTPUT
         env:
           GH_TOKEN: ${{ secrets.DEVOLUTIONSBOT_WRITE_TOKEN }}
 
-      - name: Validate Actor
+      - name: Validate Approver
         run: |
-          if [ "${{ steps.pr_info.outputs.author }}" == "${{ github.actor }}" ]; then
+          if [ "${{ steps.actor_info.outputs.author }}" == "${{ steps.actor_info.outputs.approver }}" ]; then
             echo "::error:: You can't approve your own PR"
             exit 1
           fi
