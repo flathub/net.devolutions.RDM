@@ -31,7 +31,9 @@ modules:
       - install -Dm644 net.devolutions.RDM.metainfo.xml ${FLATPAK_DEST}/share/metainfo/net.devolutions.RDM.metainfo.xml
       - desktop-file-edit --set-key='Icon' --set-value="$FLATPAK_ID" usr/share/applications/com.devolutions.remotedesktopmanager.desktop
       - sed -i "s/com.devolutions.remotedesktopmanager/$FLATPAK_ID/g" usr/share/mime/packages/*
-      - for f in $(find usr/share/ -type f -not -path usr/share/metainfo/*); do install -Dm644 "$f" `f=${f[@]##usr/} && echo "${FLATPAK_DEST}/${f/com.devolutions.remotedesktopmanager/$FLATPAK_ID}"`; done
+      - for f in $(find usr/share/ -type f -not -path usr/share/metainfo/*); do install
+        -Dm644 "$f" `f=${f[@]##usr/} && echo "${FLATPAK_DEST}/${f/com.devolutions.remotedesktopmanager/$FLATPAK_ID}"`;
+        done
     cleanup:
       - control.tar.xz
       - data.tar.xz
@@ -65,10 +67,11 @@ modules:
     sources:
       - type: git
         url: https://gitlab.gnome.org/GNOME/gdk-pixbuf.git
-        tag: 2.42.12
+        tag: 2.90.3
         x-checker-data:
           type: git
           tag-pattern: ^([\d.]+)$
+        commit: aab1a96d46a5b96dfe316cd897880637db98791c
   - name: librsvg
     buildsystem: autotools
     sources:
@@ -84,10 +87,11 @@ modules:
     sources:
       - type: git
         url: https://gitlab.gnome.org/GNOME/vte.git
-        tag: 0.72.4
+        tag: 0.79.91
         x-checker-data:
           type: git
           tag-pattern: ^([\d.]+)$
+        commit: fb488c9b7988afccb7c3a6278c058815640da673
   - name: xdotool
     no-autogen: true
     make-args:
