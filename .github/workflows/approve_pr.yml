@@ -43,6 +43,6 @@ jobs:
           sleep 120
           echo "Checking if checks have started..."
           gh pr checks ${{ inputs.pr_number }} --repo flathub/net.devolutions.RDM --watch --fail-fast
-          gh pr merge ${{ inputs.pr_number }} --repo flathub/net.devolutions.RDM --squash --delete-branch
+          gh pr merge ${{ inputs.pr_number }} --repo flathub/net.devolutions.RDM --squash --delete-branch --admin
         env:
           GH_TOKEN: ${{ secrets.DEVOLUTIONSBOT_WRITE_TOKEN }}
