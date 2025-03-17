@@ -1,6 +1,6 @@
 app-id: net.devolutions.RDM
 runtime: org.gnome.Platform
-runtime-version: '45'
+runtime-version: '48'
 sdk: org.gnome.Sdk
 sdk-extensions: [org.freedesktop.Sdk.Extension.rust-stable]
 command: remotedesktopmanager
@@ -8,8 +8,7 @@ tags: [proprietary]
 finish-args:
   - --share=ipc
   - --device=dri
-  - --socket=fallback-x11
-  - --socket=wayland
+  - --socket=x11
   - --socket=pulseaudio
   - --socket=ssh-auth
   - --share=network
