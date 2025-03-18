@@ -22,7 +22,12 @@
     </screenshot>
   </screenshots>
   <releases>
-    <release version="2025.1.0.12-1" date="2025-03-17">
+    <release version="2025.1.0.12-2" date="2025-03-18" urgency="high">
+      <description>
+        <p>Fixed crash on start up when using Wayland</p>
+      </description>
+    </release>
+    <release version="2025.1.0.12" date="2025-03-14">
       <url>https://devolutions.net/remote-desktop-manager/release-notes/linux/</url>
     </release>
   </releases>
