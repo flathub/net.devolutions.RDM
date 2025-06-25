@@ -1,6 +1,6 @@
 app-id: net.devolutions.RDM
 runtime: org.gnome.Platform
-runtime-version: '45'
+runtime-version: '48'
 sdk: org.gnome.Sdk
 sdk-extensions: [org.freedesktop.Sdk.Extension.rust-stable]
 command: remotedesktopmanager
@@ -8,8 +8,7 @@ tags: [proprietary]
 finish-args:
   - --share=ipc
   - --device=dri
-  - --socket=fallback-x11
-  - --socket=wayland
+  - --socket=x11
   - --socket=pulseaudio
   - --socket=ssh-auth
   - --share=network
@@ -39,15 +38,15 @@ modules:
       - usr
     sources:
       - type: file
-        url: https://cdn.devolutions.net/download/Linux/RDM/2024.2.2.3/RemoteDesktopManager_2024.2.2.3_amd64.deb
+        url: https://cdn.devolutions.net/download/Linux/RDM/2025.2.0.8/RemoteDesktopManager_2025.2.0.8_amd64.deb
         dest-filename: RemoteDesktopManager.deb
-        sha256: d3330e886f9a1506cfba9188de5afa23243ab46d902f83ec0f7f095e824013d5
+        sha256: 65a4080f547c53b465b1b9956d0093c7b4b5d4d94166b652a43a000d447ef41c
         only-arches:
           - x86_64
       - type: file
-        url: https://cdn.devolutions.net/download/Linux/RDM/2024.2.2.3/RemoteDesktopManager_2024.2.2.3_arm64.deb
+        url: https://cdn.devolutions.net/download/Linux/RDM/2025.2.0.8/RemoteDesktopManager_2025.2.0.8_arm64.deb
         dest-filename: RemoteDesktopManager.deb
-        sha256: 8dffdadf3e9cec0b91b746873132d34c7360536e14d40d85e801a12ba8a50ca1
+        sha256: 75a55254d602857d522fd677faa49857b124f9cc017ed1696b77a5b4ae6f722c
         only-arches:
           - aarch64
       - type: file
