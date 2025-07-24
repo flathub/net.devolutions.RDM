@@ -1,3 +1,6 @@
 {
-  "only-arches": ["x86_64", "aarch64"]
+  "only-arches": ["x86_64", "aarch64"],
+  "end-of-life": "Application has been renamed to com.devolutions.remotedesktopmanager",
+  "end-of-life-rebase": "com.devolutions.remotedesktopmanager",
+  "skip-appstream-check": true
 }
